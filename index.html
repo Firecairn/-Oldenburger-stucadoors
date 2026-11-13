@@ -14,6 +14,15 @@ body{margin:0;background:#F4EDE1}
 a{color:#6E5A32}a:hover{color:#4A3C20}
 @keyframes os-spin{to{transform:rotate(360deg)}}
 @keyframes os-fade{0%{opacity:0;transform:scale(1.1)}4%{opacity:1}17%{opacity:1}21%{opacity:0;transform:scale(1.01)}100%{opacity:0;transform:scale(1)}}
+@keyframes os-fade-m{0%{opacity:0;transform:scale(1.04)}4%{opacity:1}17%{opacity:1}21%{opacity:0;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+@media (max-width: 700px){
+.os-hero-inner{min-height:calc(100svh - 120px)!important;align-items:flex-end!important;padding:56px 20px 48px!important;box-sizing:border-box}
+.os-hero-art{display:none!important}
+.os-hero-shade{background:linear-gradient(180deg,rgba(30,24,18,0.25) 0%,rgba(30,24,18,0.45) 35%,rgba(30,24,18,0.88) 75%,rgba(30,24,18,0.94) 100%)!important}
+.os-hero-title{font-size:54px!important;line-height:1!important}
+.os-hero-text{gap:20px!important}
+.os-fade{animation-name:os-fade-m!important;object-position:center 40%}
+}
 @media (prefers-reduced-motion: reduce){.os-spin{animation:none!important}.os-fade{animation:none!important}.os-fade:first-of-type{opacity:1!important}}
 </style>
 </head>
@@ -59,12 +68,12 @@ a{color:#6E5A32}a:hover{color:#4A3C20}
 <img src="assets/gewelf-glad.jpg" alt="" class="os-fade" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: os-fade 36s linear infinite; animation-delay: 23s">
 <img src="assets/badkamer-beige-1.jpg" alt="" class="os-fade" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; animation: os-fade 36s linear infinite; animation-delay: 29s">
 
-<div style="position: absolute; inset: 0; background: linear-gradient(100deg, rgba(30, 24, 18, 0.86) 0%, rgba(30, 24, 18, 0.66) 50%, rgba(30, 24, 18, 0.38) 100%)"></div>
+<div class="os-hero-shade" style="position: absolute; inset: 0; background: linear-gradient(100deg, rgba(30, 24, 18, 0.86) 0%, rgba(30, 24, 18, 0.66) 50%, rgba(30, 24, 18, 0.38) 100%)"></div>
 </div>
-<div style="position: relative; max-width: 1240px; margin: 0 auto; padding: 72px 24px 120px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 26px; color: #F7F1E7">
+<div class="os-hero-inner" style="position: relative; max-width: 1240px; margin: 0 auto; padding: 72px 24px 120px; display: flex; flex-wrap: wrap; align-items: center; gap: 64px">
+<div class="os-hero-text" style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 26px; color: #F7F1E7">
 <div style="display: flex; align-items: center; gap: 14px; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; color: #E2CFA2"><span style="width: 40px; height: 1px; background: #E2CFA2"></span>STUCADOOR IN DRENTHE</div>
-<h1 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 84px; line-height: 0.98; font-weight: 500; letter-spacing: -0.015em">Strak in afwerking,<br><em style="font-style: italic; color: #E2CFA2">sterk in detail.</em></h1>
+<h1 class="os-hero-title" style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 84px; line-height: 0.98; font-weight: 500; letter-spacing: -0.015em">Strak in afwerking,<br><em style="font-style: italic; color: #E2CFA2">sterk in detail.</em></h1>
 <div style="width: 120px; height: 2px; background: #C9B285"></div>
 <p style="margin: 0; font-size: 18px; color: #E8DFD0; max-width: 480px">Van glad stucwerk en gewelven tot betonlook, gietvloeren en spuitwerk. Vakwerk dat je elke dag ziet, en elke dag voelt.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px">
@@ -72,7 +81,7 @@ a{color:#6E5A32}a:hover{color:#4A3C20}
 <a href="projecten.html" style="border: 1px solid #F4EDE1; color: #F4EDE1; text-decoration: none; padding: 16px 30px; border-radius: 999px; font-weight: 500">Bekijk projecten</a>
 </div>
 </div>
-<div style="flex: 1 1 420px; min-width: 0; display: flex; justify-content: center">
+<div class="os-hero-art" style="flex: 1 1 420px; min-width: 0; display: flex; justify-content: center">
 <div style="position: relative; width: 100%; max-width: 460px">
 <div style="height: 640px; border-radius: 230px 230px 6px 6px; overflow: hidden; background: #D9CDB8; box-shadow: 0 40px 70px -35px rgba(70, 55, 30, 0.55)">
 <video autoplay src="assets/hero-gewelf.mp4" poster="assets/hero-gewelf-poster.jpg" muted="" loop="" playsinline="" preload="auto" aria-label="Frank spuit stuc op een gewelfd plafond" style="width: 100%; height: 100%; object-fit: cover; display: block"></video>
