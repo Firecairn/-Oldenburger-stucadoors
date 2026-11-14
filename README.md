@@ -2,33 +2,27 @@
 
 Website van Oldenburger Stucadoors: *strak in afwerking, sterk in detail.*
 
-Een statische website van zes pagina's, zonder build-stap:
+De site staat op Vercel en wordt bij elke wijziging in deze repository automatisch bijgewerkt.
 
-| Pagina | Bestand |
+## Gegevens invullen
+
+Alle contactgegevens staan in één bestand: **`gegevens.js`**. Vul daar telefoonnummer, WhatsApp, e-mail, adres, KvK en reviews in. Wat is ingevuld verschijnt vanzelf op alle pagina's; wat leeg blijft wordt nergens getoond.
+
+Het offerteformulier werkt zodra in `gegevens.js` een e-mailadres of een formulierdienst is ingevuld:
+
+- met `formulier` (bijvoorbeeld een Formspree-adres) wordt de aanvraag direct verstuurd;
+- met alleen `email` opent het e-mailprogramma van de bezoeker met de ingevulde aanvraag.
+
+## Opbouw
+
+| Onderdeel | Bestand |
 |---|---|
-| Home | `index.html` |
-| Diensten | `diensten.html` |
-| Werkwijze (laag voor laag) | `werkwijze.html` |
-| Projecten (met filter) | `projecten.html` |
-| Over Frank | `over-frank.html` |
-| Contact | `contact.html` |
+| Pagina's | `index.html`, `diensten.html`, `werkwijze.html`, `projecten.html`, `over-frank.html`, `contact.html`, `privacy.html`, `404.html` |
+| Opmaak | `assets/site.css` |
+| Gedrag (menu, filter, vergroting, formulier) | `assets/site.js` |
+| Foto's, video's, lettertypes | `assets/` |
+| Teksten en paginaopbouw | `tools/build.py` |
 
-Foto's en video's staan in `assets/`.
+De pagina's worden gemaakt door `python3 tools/build.py` (vereist Pillow). Pas teksten daar aan en draai het script opnieuw; wijzig de `.html`-bestanden niet met de hand, want die worden overschreven. Zet in `tools/build.py` bij `SITE_URL` het domein zodra dat bekend is: dan komen er ook een sitemap, `robots.txt` en deel-afbeelding voor sociale media bij.
 
-## Online zetten met GitHub Pages
-
-1. Ga in deze repository naar **Settings → Pages**.
-2. Kies bij *Source* voor **Deploy from a branch**, branch `main`, map `/ (root)`.
-3. Na een minuut staat de site op `https://<gebruikersnaam>.github.io/<repository>/`.
-
-## Nog aan te vullen
-
-Zoek in de HTML-bestanden op `[` om alle placeholders te vinden, zoals:
-
-- telefoonnummer, e-mailadres en WhatsApp-nummer
-- KvK-nummer, adres en privacyverklaring
-- echte reviews van klanten
-- tekst over Frank (ervaring, achtergrond)
-- plaats en toelichting bij het gewelfproject
-
-Het offerteformulier op `contact.html` verstuurt nog niets. Koppel het aan een formulierdienst (bijvoorbeeld Formspree of Netlify Forms) of aan een eigen offertesysteem.
+Lettertypes: Cormorant Garamond en Inter (SIL Open Font License), lokaal meegeleverd.
